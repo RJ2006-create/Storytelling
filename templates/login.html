@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex justify-center items-center min-h-screen">
+
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-sm w-full">
+        <h2 class="text-3xl font-semibold mb-4">Login</h2>
+        <form action="{{ url_for('login') }}" method="POST">
+            <div class="mb-4">
+                <label for="username" class="block mb-2">Username</label>
+                <input type="text" id="username" name="username" class="w-full p-2 rounded bg-gray-700 border-none focus:outline-none" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block mb-2">Password</label>
+                <input type="password" id="password" name="password" class="w-full p-2 rounded bg-gray-700 border-none focus:outline-none" required>
+            </div>
+            <button type="submit" class="w-full py-2 bg-green-500 rounded-lg hover:bg-green-600 transition">Login</button>
+        </form>
+        <div class="mt-4 text-center">
+            <p>Don't have an account? <a href="{{ url_for('register') }}" class="text-blue-400 hover:underline">Register</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

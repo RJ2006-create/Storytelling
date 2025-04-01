@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-poppins">
+    <div class="max-w-4xl mx-auto p-6 mt-10">
+        <h1 class="text-3xl font-semibold text-center mb-8">Edit Story</h1>
+        <form action="{{ url_for('edit_story', story_id=story.id) }}" method="POST" class="space-y-4">
+            <div>
+                <label for="title" class="block text-lg">Title</label>
+                <input type="text" id="title" name="title" value="{{ story.title }}" class="w-full p-3 bg-gray-800 text-white rounded-lg focus:outline-none" required>
+            </div>
+
+            <div>
+                <label for="content" class="block text-lg">Content</label>
+                <textarea id="content" name="content" class="w-full p-3 bg-gray-800 text-white rounded-lg focus:outline-none" rows="4" required>{{ story.content }}</textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 bg-blue-500 rounded-lg text-white font-semibold hover:bg-blue-600">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
